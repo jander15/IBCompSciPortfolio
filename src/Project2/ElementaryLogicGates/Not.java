@@ -9,6 +9,7 @@ public class Not {
 
     public void compute(boolean in){
 
+        //code code code blah blah blah
     }
 
 }
