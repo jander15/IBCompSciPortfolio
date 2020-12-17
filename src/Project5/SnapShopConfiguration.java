@@ -15,9 +15,10 @@ public class SnapShopConfiguration {
     public static void configure(SnapShop theShop) {
         //replace the following path in the following line by the directory path you want your
         //file loader to open
-        theShop.setDefaultFilename("C:\\Users\\janderson\\Desktop");
+        theShop.setDefaultFilename("C:\\Users\\janderson\\Desktop\\");
 
         theShop.addFilter(new FlipHorizontalFilter(), "Flip Horizontal");
+        theShop.addFilter(new DeMosaicFilter(),"DeMosaic");
     }
 
     /** Main method */

@@ -6,14 +6,14 @@ import java.io.IOException;
 public class Main {
     public static void main(String[] args) throws IOException {
 
-        String dir = "C:\\Users\\janderson\\Desktop\\filesDemo\\";
+        String dir = "C:\\Users\\janderson\\Documents\\IB CS Portfolio\\janderPortfolio\\src\\Project4\\";
 
-        File myFile = new File(dir+"myFile.csv");
+        File myFile = new File(dir+"unsorted.csv");
         Parser parser = new Parser(myFile);
-        double data = parser.findAverage();
+        String[] sortedArray = parser.sortAscending();
 
         Writer writer = new Writer(dir+"output.csv");
-        writer.writeData(Double.toString(data));
+        writer.writeArrayData(sortedArray);
 
 
     }

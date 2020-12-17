@@ -38,6 +38,7 @@ public class Game extends JPanel {
             xTurn=true;
             gameOver=false;
             spotsFilled=0;
+
         }
 
     private class ButtonListener implements ActionListener{

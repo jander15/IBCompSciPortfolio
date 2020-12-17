@@ -2,6 +2,9 @@ package Project4;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.List;
 import java.util.Scanner;
 
 /** A Class to read in a file and parse through its data
@@ -11,7 +14,10 @@ import java.util.Scanner;
  */
 
 public class Parser {
+    //instance variables
     public Scanner scanner;
+    int numValues=13;
+    public String[] unsortedValues = new String[numValues];
 
     public Parser(File file) {
         try {
@@ -20,28 +26,21 @@ public class Parser {
             System.out.println("file was not found");
             e.printStackTrace();
         }
+        readDataIntoArray();
     }
 
-    /**
-     * prints all data in the file
-     */
-    public void printData(){
-        while(scanner.hasNext()){
-            System.out.println(scanner.next());
+    public void readDataIntoArray(){
+        for (int i = 0; i < numValues; i++) {
+            unsortedValues[i]=scanner.next();
+            //System.out.println(unsortedValues[i].toString());
         }
     }
 
-    public double findAverage(){
+    public String[] sortAscending(){
 
-        double sum=0;
-        int i = 0;
+        BubbleSorter bs = new BubbleSorter();
+        return bs.sort(unsortedValues);
 
-        while(scanner.hasNext()){
-            i++;
-            sum+=Double.valueOf(scanner.next());
-        }
-        System.out.println(sum/i);
-        return sum/i;
     }
 
 

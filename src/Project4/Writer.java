@@ -18,6 +18,14 @@ public class Writer {
     public void writeData(String data) throws IOException {
         writer.write(data);
         writer.close();
-
     }
+
+    public void writeArrayData(String[] arrayData) throws IOException{
+        for (int i = 0; i < arrayData.length; i++) {
+            writer.write(arrayData[i]+"\n");
+        }
+        writer.close();
+    }
+
+
 }
